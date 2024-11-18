@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { supabase } from '../client';
 import { FaThumbsUp, FaEdit, FaTrashAlt } from 'react-icons/fa';
 import Button from '../components/Button';
+import './PostPage.css';
 
 const PostPage = () => {
   const { id } = useParams();

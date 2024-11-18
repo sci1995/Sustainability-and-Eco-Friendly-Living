@@ -13,7 +13,6 @@ const App = () => {
       <Header onSearch={(query) => console.log(query)} /> 
       
       <Routes>
-        {/* Define routes for different pages */}
         <Route path="/home" element={<HomePage />} />
         <Route path="/create-post" element={<CreatePost />} /> 
         <Route path="/post/:id" element={<PostPage />} /> {/* Update 'component' to 'element' */}
