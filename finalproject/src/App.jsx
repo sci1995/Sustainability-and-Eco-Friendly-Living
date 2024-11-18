@@ -1,35 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Header from "./components/Header"; 
+import HomePage from "./pages/HomePage"; 
+import CreatePost from "./pages/CreatPost";
+import PostPage from './pages/PostPage'; 
+import EditPost from './pages/EditPost'; 
+import "./App.css"; 
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div>
+      <Header onSearch={(query) => console.log(query)} /> 
+      
+      <Routes>
+        {/* Define routes for different pages */}
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/create-post" element={<CreatePost />} /> 
+        <Route path="/post/:id" element={<PostPage />} /> {/* Update 'component' to 'element' */}
+        <Route path="/edit-post/:id" element={<EditPost />} /> {/* Update 'component' to 'element' */}
+        </Routes>
+    </div>
+  );
+};
 
-export default App
+export default App;

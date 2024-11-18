@@ -1,0 +1,74 @@
+/* CreatePost.css */
+
+/* Container for the CreatePost page */
+.create-post-page {
+    max-width: 600px;
+    max-height: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+  }
+  
+  /* Title field (Long input) */
+  .input-field-container input[name="title"],
+  .input-field-container input[name="image_url"] {
+    width: 100%; /* Full width */
+    padding: 12px; /* Add padding for better spacing */
+    border-radius: 8px; /* Rounded corners */
+    border: 1px solid #ddd; /* Light gray border */
+    font-size: 16px; /* Font size */
+    transition: all 0.3s ease-in-out; /* Smooth transition on focus */
+  }
+  
+  /* Content field (Large input) */
+  .input-field-container textarea[name="content"] {
+    width: 100%; /* Full width */
+    height: 100%; /* Larger height for content */
+    padding: 12px; /* Padding for comfort */
+    border-radius: 8px; /* Rounded corners */
+    border: 1px solid #ddd; /* Light gray border */
+    font-size: 16px; /* Font size */
+    resize: none; /* Disable resizing */
+    transition: all 0.3s ease-in-out; /* Smooth transition on focus */
+  }
+  
+  /* Focus states */
+  .input-field-container input:focus,
+  .input-field-container textarea:focus {
+    border-color: #4CAF50; /* Green border when focused */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.4); /* Add shadow */
+  }
+  
+  /* Success and Error messages */
+  .text-green-500 {
+    color: #4CAF50;
+  }
+  
+  .text-red-500 {
+    color: #F44336;
+  }
+  
+  /* Button */
+  button {
+
+    padding: 12px;
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+  }
+  
+  button:disabled {
+    background-color: #ccc; /* Disabled button state */
+    cursor: not-allowed;
+  }
+  
