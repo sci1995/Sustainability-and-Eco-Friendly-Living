@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { supabase } from '../client'; 
-import './EditPostPage.css'; 
+// import './EditPostPage.css'; 
 
 const EditPost = () => {
   const { id } = useParams(); // Get the post ID from the URL

@@ -3,7 +3,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { supabase } from '../client';
 import { FaThumbsUp, FaEdit, FaTrashAlt } from 'react-icons/fa';
 import Button from '../components/Button';
-import './PostPage.css';
 
 const PostPage = () => {
   const { id } = useParams();
@@ -60,8 +59,13 @@ const PostPage = () => {
   };
 
   const handleDeletePost = async () => {
+    const isConfirmed = window.confirm('Are you sure you want to delete this post?');
+    if (!isConfirmed) return;
+  
     try {
-      await supabase.from('Posts').delete().eq('id', post.id);
+      const { error } = await supabase.from('Posts').delete().eq('id', post.id);
+      if (error) throw error;
+  
       navigate('/');
     } catch (err) {
       setError('Error deleting post: ' + err.message);
@@ -78,15 +82,30 @@ const PostPage = () => {
   
       if (error) throw error;
   
-     
       if (data && data.length > 0) {
         setComments([...comments, data[0]]);
       }
   
-      setNewComment(''); 
+      setNewComment('');
     } catch (err) {
       setError('Error adding comment: ' + err.message);
     }
+  };
+
+  const renderImage = (imageUrl) => {
+  
+  
+    if (imageUrl) {
+      return (
+        <img 
+          className="post-image" 
+          src={imageUrl} 
+          alt="Post content" 
+          onError={(e) => e.target.src = 'fallback_image_url'}  
+        />
+      );
+    }
+    return <p>No image available</p>;  // If no image URL exists, show message
   };
 
   if (loading) return <div>Loading...</div>;
@@ -96,7 +115,7 @@ const PostPage = () => {
     <div className="post-page">
       <div className="container">
         <h1 className="post-title">{post.title}</h1>
-        <img className="post-image" src={post.image_url} alt={post.title} />
+        {renderImage(post.imageUrl)} {/* Render the image */}
         <p className="post-content">{post.content}</p>
 
         <div className="post-actions">

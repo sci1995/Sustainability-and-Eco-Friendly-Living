@@ -2,32 +2,30 @@ import React, { useState } from 'react';
 import { supabase } from '../client'; 
 import Button from '../components/Button'; 
 import InputField from '../elements/InputField'; 
-import './CreatePost.css';
 
-const CreatPost = () => {
+const CreatePost = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
-  const [imageUrl, setImageUrl] = useState('');
+  const [imageUrl, setImageUrl] = useState(''); // URL for the image
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
 
-
   const handleCreatePost = async (e) => {
-    e.preventDefault(); 
-    setLoading(true); 
+    e.preventDefault();
+    setLoading(true);
 
     try {
-      // Insert the post into the Supabase 
+      // Insert the post into the Supabase Posts table with the provided image URL
       const { data, error } = await supabase
-        .from('Posts') 
+        .from('Posts')
         .insert([
           {
             title: title,
             content: content,
-            imageUrl: imageUrl,
+            imageUrl: imageUrl, // Use the image URL entered by the user
             created_at: new Date().toISOString(),
-            upVotes: 0, 
+            upVotes: 0,
           },
         ]);
 
@@ -102,4 +100,6 @@ const CreatPost = () => {
   );
 };
 
-export default CreatPost;
+export default CreatePost;
+
+

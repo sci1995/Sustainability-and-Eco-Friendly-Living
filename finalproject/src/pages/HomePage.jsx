@@ -3,7 +3,6 @@ import { supabase } from '../client';
 import { useNavigate } from 'react-router-dom'; 
 import PostCard from '../components/PostCard';
 import Button from '../components/Button'; 
-import './HomePage.css'; 
 
 const HomePage = () => {
   const [posts, setPosts] = useState([]);
