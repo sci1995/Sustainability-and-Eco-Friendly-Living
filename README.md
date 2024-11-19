@@ -2,7 +2,7 @@
 
 # Web Development Final Project - Sustainability and Eco-Friendly Living project 
 
-Submitted by: Aisha Beltagy
+Submitted by: **Aisha Beltagy**
 
 This web app: This project is a web application built to create an online community for individuals passionate about sustainability and eco-friendly living. The forum allows users to post content related to environmental issues, green practices, eco-friendly tips, and sustainability innovations. It encourages engagement through a commenting system, upvoting mechanism, and discussion threads that foster collaboration and knowledge sharing.
 
