@@ -249,7 +249,7 @@ textarea {
 
 /* Comments Section */
 .comments-section {
-  background-color: #fff;
+  background-color: #b8c18e;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
@@ -260,8 +260,8 @@ textarea {
   padding: 10px;
   border-radius: 8px;
   margin-bottom: 10px;
-  font-size: 1rem;
-  color: var(--gray-dark);
+  font-size: 1.5rem;
+  color: #374204;
 }
 
 .comment-input {

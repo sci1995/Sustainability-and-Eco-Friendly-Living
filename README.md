@@ -2,11 +2,11 @@
 
 # Web Development Final Project - Sustainability and Eco-Friendly Living project 
 
-Submitted by: **Aisha Beltagy**
+Submitted by: Aisha Beltagy
 
-This web app: **insert description**
+This web app: This project is a web application built to create an online community for individuals passionate about sustainability and eco-friendly living. The forum allows users to post content related to environmental issues, green practices, eco-friendly tips, and sustainability innovations. It encourages engagement through a commenting system, upvoting mechanism, and discussion threads that foster collaboration and knowledge sharing.
 
-Time spent: **22** hours spent in total
+Time spent: **25** hours spent in total
 
 ## Required Features
 
@@ -46,7 +46,7 @@ Here's a walkthrough of implemented user stories:
 <img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
+GIF created with ScreenToGif
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows

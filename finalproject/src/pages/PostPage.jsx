@@ -63,9 +63,23 @@ const PostPage = () => {
     if (!isConfirmed) return;
   
     try {
-      const { error } = await supabase.from('Posts').delete().eq('id', post.id);
-      if (error) throw error;
+      // First, delete all the comments related to this post
+      const { error: commentsError } = await supabase
+        .from('Comments')
+        .delete()
+        .eq('postId', post.id); // Delete comments where postId matches
   
+      if (commentsError) throw commentsError;
+  
+      // Then, delete the post
+      const { error: postError } = await supabase
+        .from('Posts')
+        .delete()
+        .eq('id', post.id); // Delete the post itself
+  
+      if (postError) throw postError;
+  
+      // After deleting the post and comments, navigate back to the home page
       navigate('/');
     } catch (err) {
       setError('Error deleting post: ' + err.message);
@@ -102,6 +116,8 @@ const PostPage = () => {
           src={imageUrl} 
           alt="Post content" 
           onError={(e) => e.target.src = 'fallback_image_url'}  
+          style={{ width: '400px', height: '300px', objectFit: 'cover' }}  
+
         />
       );
     }
@@ -115,7 +131,7 @@ const PostPage = () => {
     <div className="post-page">
       <div className="container">
         <h1 className="post-title">{post.title}</h1>
-        {renderImage(post.imageUrl)} {/* Render the image */}
+        {renderImage(post.imageUrl)} 
         <p className="post-content">{post.content}</p>
 
         <div className="post-actions">

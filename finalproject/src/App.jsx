@@ -13,6 +13,7 @@ const App = () => {
       <Header onSearch={(query) => console.log(query)} /> 
       
       <Routes>
+        <Route path="/" element={<HomePage />} /> 
         <Route path="/home" element={<HomePage />} />
         <Route path="/create-post" element={<CreatePost />} /> 
         <Route path="/post/:id" element={<PostPage />} /> {/* Update 'component' to 'element' */}

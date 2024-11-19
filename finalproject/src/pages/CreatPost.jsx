@@ -45,6 +45,7 @@ const CreatePost = () => {
     } finally {
       setLoading(false); // Set loading state back to false
     }
+    navigate('/');
   };
 
   return (
